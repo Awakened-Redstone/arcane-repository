@@ -24,7 +24,7 @@
       "dev.enjarai.arcane_repository.ArcaneRepositoryClient"
     ],
     "fabric-datagen": [
-      "dev.enjarai.arcane_repository.ModDataGen"
+      "dev.enjarai.arcane_repository.datagen.ModDataGen"
     ]
   },
   "mixins": [

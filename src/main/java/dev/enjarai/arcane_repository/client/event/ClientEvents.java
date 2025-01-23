@@ -1,13 +1,12 @@
 package dev.enjarai.arcane_repository.client.event;
 
-import dev.enjarai.arcane_repository.item.custom.book.MysticalBookItem;
+import dev.enjarai.arcane_repository.registry.item.MysticalBookItem;
 import dev.enjarai.arcane_repository.network.ScrollItemPacket;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.client.screen.v1.ScreenEvents;
 import net.fabricmc.fabric.api.client.screen.v1.ScreenMouseEvents;
-import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import dev.enjarai.arcane_repository.mixin.accessor.HandledScreenAccessor;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;

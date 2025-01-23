@@ -1,6 +1,6 @@
 package dev.enjarai.arcane_repository;
 
-import dev.enjarai.arcane_repository.block.ModBlockEntities;
+import dev.enjarai.arcane_repository.registry.ModBlockEntities;
 import dev.enjarai.arcane_repository.client.ClientNetworkListeners;
 import dev.enjarai.arcane_repository.client.ItemModelProviders;
 import dev.enjarai.arcane_repository.client.event.ClientEvents;
@@ -21,7 +21,7 @@ public class ArcaneRepositoryClient implements ClientModInitializer {
         ClientNetworkListeners.registerListeners();
         ClientEvents.register();
 
-        BlockEntityRendererFactories.register(ModBlockEntities.MYSTICAL_LECTERN_BLOCK_ENTITY, MysticalLecternBlockEntityRenderer::new);
+        BlockEntityRendererFactories.register(ModBlockEntities.MYSTICAL_LECTERN, MysticalLecternBlockEntityRenderer::new);
         BlockEntityRendererFactories.register(BlockEntityType.CHISELED_BOOKSHELF, ChiseledBookshelfBlockEntityRenderer::new);
 
         ItemModelProviders.register();

@@ -1,8 +1,9 @@
 package dev.enjarai.arcane_repository.util.request;
 
 import com.google.common.collect.ImmutableList;
-import dev.enjarai.arcane_repository.item.custom.book.MysticalBookItem;
-import dev.enjarai.arcane_repository.item.custom.page.type.ItemStorageTypePage;
+import dev.enjarai.arcane_repository.extension.IndexesBooks;
+import dev.enjarai.arcane_repository.registry.item.MysticalBookItem;
+import dev.enjarai.arcane_repository.registry.item.page.type.storage.ItemStorageTypePage;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
@@ -33,13 +34,13 @@ public class ExtractionRequest extends QueryBasedRequest {
         ImmutableList.Builder<ItemStack> builder = ImmutableList.builder();
 
         do {
-            for (IndexSource source : index.getSources()) {
+            for (IndexSource source : index.arcane_repository$getSources()) {
                 if (isSatisfied()) break;
 
                 var book = source.getBook();
                 if (book.getItem() instanceof MysticalBookItem bookItem) {
                     if (bookItem.getTypePage(book).orElse(null) instanceof ItemStorageTypePage page) {
-                        builder.addAll(page.extractItems(book, this, shouldApply()));
+                        builder.addAll(page.extractItems(source, this, shouldApply()));
 
                         source.onInteractionComplete();
                         runBlockAffectedCallback(source.getBlockEntity());

@@ -16,7 +16,7 @@ public record IndexSource(ItemStack book, @Nullable BlockEntity blockEntity) {
 
     public void onInteractionComplete() {
         if (blockEntity instanceof IndexInteractable interactable) {
-            interactable.onInteractionComplete();
+            interactable.arcane_repository$onInteractionComplete();
         }
     }
 }

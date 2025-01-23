@@ -1,6 +1,6 @@
 package dev.enjarai.arcane_repository.mixin;
 
-import dev.enjarai.arcane_repository.item.ModLootTables;
+import dev.enjarai.arcane_repository.registry.ModLootTables;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.item.EnderPearlItem;
 import net.minecraft.item.ItemStack;
@@ -11,8 +11,6 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
-
-import java.util.stream.Stream;
 
 @Mixin(EnderPearlItem.class)
 public abstract class EnderPearlItemMixin extends ItemMixin {

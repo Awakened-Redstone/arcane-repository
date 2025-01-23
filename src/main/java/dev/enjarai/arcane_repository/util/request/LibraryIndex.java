@@ -1,21 +1,25 @@
 package dev.enjarai.arcane_repository.util.request;
 
-import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
-import dev.enjarai.arcane_repository.block.ModTags;
+import dev.enjarai.arcane_repository.extension.IndexesBooks;
+import dev.enjarai.arcane_repository.registry.ModTags;
 import dev.enjarai.arcane_repository.util.WorldEffects;
+import net.minecraft.item.Item;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import org.spongepowered.asm.mixin.Unique;
 
+import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-public class LibraryIndex implements IndexInteractable {
+public class LibraryIndex implements IndexInteractable, IndexesBooks {
     public static final LibraryIndex EMPTY = new LibraryIndex();
 
     private final Set<IndexInteractable> interactables;
+    private Map<Item, Set<Byte>> index = new HashMap<>();
 
     public LibraryIndex() {
         this.interactables = new HashSet<>();
@@ -37,8 +41,7 @@ public class LibraryIndex implements IndexInteractable {
                 for (int y = -searchRange; y <= searchRange; y++) {
                     BlockPos testPos = pos.add(x, y, z);
 
-                    if (world.getBlockState(testPos).isIn(ModTags.INDEX_INTRACTABLE) &&
-                            world.getBlockEntity(testPos) instanceof IndexInteractable entity) {
+                    if (world.getBlockState(testPos).isIn(ModTags.INDEX_INTRACTABLE) && world.getBlockEntity(testPos) instanceof IndexInteractable entity) {
                         result.add(entity, particles ? WorldEffects::registrationParticles : i -> {});
                     }
                 }
@@ -66,11 +69,11 @@ public class LibraryIndex implements IndexInteractable {
     }
 
     @Override
-    public Set<IndexSource> getSources() {
+    public Set<IndexSource> arcane_repository$getSources() {
         ImmutableSet.Builder<IndexSource> builder = ImmutableSet.builder();
 
         for (IndexInteractable entity : interactables) {
-            builder.addAll(entity.getSources());
+            builder.addAll(entity.arcane_repository$getSources());
         }
 
         return builder.build();

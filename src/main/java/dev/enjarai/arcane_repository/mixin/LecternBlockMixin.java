@@ -1,15 +1,12 @@
 package dev.enjarai.arcane_repository.mixin;
 
-import dev.enjarai.arcane_repository.block.ModBlocks;
-import dev.enjarai.arcane_repository.block.custom.MysticalLecternBlock;
-import dev.enjarai.arcane_repository.item.ModItems;
-import dev.enjarai.arcane_repository.item.custom.book.MysticalBookItem;
+import dev.enjarai.arcane_repository.registry.ModBlocks;
+import dev.enjarai.arcane_repository.registry.block.MysticalLecternBlock;
+import dev.enjarai.arcane_repository.registry.item.MysticalBookItem;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.LecternBlock;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ItemActionResult;
 import net.minecraft.util.hit.BlockHitResult;

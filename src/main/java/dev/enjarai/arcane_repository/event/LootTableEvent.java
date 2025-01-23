@@ -1,6 +1,6 @@
 package dev.enjarai.arcane_repository.event;
 
-import dev.enjarai.arcane_repository.item.ModItems;
+import dev.enjarai.arcane_repository.registry.ModItems;
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 import net.minecraft.entity.EntityType;
 import net.minecraft.loot.LootPool;

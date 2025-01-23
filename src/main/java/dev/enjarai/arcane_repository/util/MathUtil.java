@@ -1,5 +1,7 @@
 package dev.enjarai.arcane_repository.util;
 
+import net.minecraft.util.math.MathHelper;
+
 public class MathUtil {
     public static float fixRadians(float radians) {
         return (float) Math.IEEEremainder(radians, Math.PI * 2);
@@ -11,5 +13,9 @@ public class MathUtil {
         int exp = (int) (Math.log(count) / Math.log(1000));
         String value = "" + (int) (count / Math.pow(1000, exp));
         return String.format("%s%c", value, "kMBTPE".charAt(exp - 1));
+    }
+
+    public static byte toByte(int val) {
+        return (byte) MathHelper.clamp(val, Byte.MIN_VALUE, Byte.MAX_VALUE);
     }
 }

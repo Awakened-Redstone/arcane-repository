@@ -1,6 +1,6 @@
 package dev.enjarai.arcane_repository.util.state;
 
-import dev.enjarai.arcane_repository.block.entity.MysticalLecternBlockEntity;
+import dev.enjarai.arcane_repository.registry.block.entity.MysticalLecternBlockEntity;
 
 public class PageLecternState {
     public final MysticalLecternBlockEntity lectern;

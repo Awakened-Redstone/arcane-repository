@@ -1,15 +1,18 @@
 package dev.enjarai.arcane_repository;
 
-import dev.enjarai.arcane_repository.block.ModBlockEntities;
-import dev.enjarai.arcane_repository.block.ModBlocks;
+import dev.enjarai.arcane_repository.command.ModCommands;
+import dev.enjarai.arcane_repository.registry.ModBlockEntities;
+import dev.enjarai.arcane_repository.registry.ModBlocks;
 import dev.enjarai.arcane_repository.event.LootTableEvent;
 import dev.enjarai.arcane_repository.event.ModEvents;
 import dev.enjarai.arcane_repository.event.ServerNetworkListeners;
-import dev.enjarai.arcane_repository.item.ModDataComponentTypes;
-import dev.enjarai.arcane_repository.item.ModItems;
-import dev.enjarai.arcane_repository.item.ModLootTables;
-import dev.enjarai.arcane_repository.item.ModRecipes;
+import dev.enjarai.arcane_repository.registry.ModDataComponentTypes;
+import dev.enjarai.arcane_repository.registry.ModItems;
+import dev.enjarai.arcane_repository.registry.ModLootTables;
+import dev.enjarai.arcane_repository.registry.ModRecipes;
+import io.wispforest.owo.registration.reflect.AutoRegistryContainer;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
@@ -19,7 +22,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class ArcaneRepository implements ModInitializer {
-
 	public static final Logger LOGGER = LogManager.getLogger("arcane_repository");
 	public static final String MOD_ID = "arcane_repository";
 
@@ -28,13 +30,15 @@ public class ArcaneRepository implements ModInitializer {
 		ModDataComponentTypes.registerDataComponentTypes();
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
-		ModBlockEntities.registerBlockEntities();
+		AutoRegistryContainer.register(ModBlockEntities.class, MOD_ID, false);
 		ModLootTables.registerLootTables();
 		LootTableEvent.registerLootTable();
 		ModRecipes.registerModRecipes();
 
 		ModEvents.register();
 		ServerNetworkListeners.registerListeners();
+
+		CommandRegistrationCallback.EVENT.register(ModCommands::registerCommands);
 	}
 
 	public static Identifier id(String path) {

@@ -1,8 +1,9 @@
 package dev.enjarai.arcane_repository.util.request;
 
-import dev.enjarai.arcane_repository.item.custom.book.MysticalBookItem;
-import dev.enjarai.arcane_repository.item.custom.page.type.ItemStorageTypePage;
-import net.minecraft.block.Block;
+import dev.enjarai.arcane_repository.extension.IndexesBooks;
+import dev.enjarai.arcane_repository.registry.item.MysticalBookItem;
+import dev.enjarai.arcane_repository.registry.item.page.type.storage.ItemStorageTypePage;
+import dev.enjarai.arcane_repository.repository.request.Request;
 import net.minecraft.item.ItemStack;
 
 import java.util.ArrayList;
@@ -20,7 +21,7 @@ public class InsertionRequest extends Request {
 
     @Override
     public void apply(LibraryIndex index) {
-        var sources = new ArrayList<>(index.getSources());
+        var sources = new ArrayList<>(index.arcane_repository$getSources());
 
         // Sort sources by priority.
         sources.sort(Comparator.comparingInt((source) -> {
@@ -41,8 +42,16 @@ public class InsertionRequest extends Request {
             var book = source.getBook();
             if (book.getItem() instanceof MysticalBookItem bookItem) {
                 if (bookItem.getTypePage(book).orElse(null) instanceof ItemStorageTypePage page) {
+                    ItemStack stackCopy = getItemStack().copy();
                     int amountInserted = page.tryAddItem(book, getItemStack());
                     satisfy(amountInserted);
+
+                    if (amountInserted > 0 && source.blockEntity() instanceof IndexesBooks bookIndexer) {
+                        int bookIndex = bookIndexer.arcane_repository$findIndex(book);
+                        if (bookIndex > -1) {
+                            bookIndexer.arcane_repository$addToIndex(stackCopy.getItem(), bookIndex);
+                        }
+                    }
 
                     source.onInteractionComplete();
                     runBlockAffectedCallback(source.blockEntity());

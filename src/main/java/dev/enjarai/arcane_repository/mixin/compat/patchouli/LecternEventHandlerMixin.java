@@ -1,14 +1,11 @@
 package dev.enjarai.arcane_repository.mixin.compat.patchouli;
 
-import dev.enjarai.arcane_repository.block.ModBlocks;
+import dev.enjarai.arcane_repository.registry.ModBlocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.world.World;
-import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 //@Mixin(LecternEventHandler.class)

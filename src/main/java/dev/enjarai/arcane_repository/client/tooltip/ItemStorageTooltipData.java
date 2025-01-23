@@ -2,7 +2,7 @@ package dev.enjarai.arcane_repository.client.tooltip;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import dev.enjarai.arcane_repository.util.ContentsIndex;
+import dev.enjarai.arcane_repository.repository.storage.ContentsIndex;
 import net.minecraft.client.gui.tooltip.TooltipComponent;
 
 @Environment(EnvType.CLIENT)

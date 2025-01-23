@@ -1,7 +1,7 @@
 package dev.enjarai.arcane_repository.screen;
 
-import dev.enjarai.arcane_repository.item.custom.book.MysticalBookItem;
-import dev.enjarai.arcane_repository.item.inventory.LibraryBookSlot;
+import dev.enjarai.arcane_repository.registry.item.MysticalBookItem;
+import dev.enjarai.arcane_repository.inventory.LibraryBookSlot;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;

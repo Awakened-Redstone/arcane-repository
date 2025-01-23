@@ -1,20 +1,17 @@
 package dev.enjarai.arcane_repository.client;
 
-import dev.enjarai.arcane_repository.item.ModDataComponentTypes;
-import dev.enjarai.arcane_repository.item.component.MysticalBookComponent;
-import dev.enjarai.arcane_repository.item.custom.book.MysticalBookItem;
+import dev.enjarai.arcane_repository.registry.ModDataComponentTypes;
+import dev.enjarai.arcane_repository.component.MysticalBookComponent;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
-import net.fabricmc.fabric.mixin.object.builder.client.ModelPredicateProviderRegistryAccessor;
-import dev.enjarai.arcane_repository.item.ModItems;
+import dev.enjarai.arcane_repository.registry.ModItems;
 import net.minecraft.client.item.ModelPredicateProviderRegistry;
 import net.minecraft.item.Item;
-import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.ColorHelper;
 
-import static dev.enjarai.arcane_repository.item.ModItems.MYSTICAL_BOOK;
+import static dev.enjarai.arcane_repository.registry.ModItems.MYSTICAL_BOOK;
 
 @Environment(value = EnvType.CLIENT)
 public class ItemModelProviders {

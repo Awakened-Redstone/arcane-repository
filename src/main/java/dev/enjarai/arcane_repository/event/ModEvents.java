@@ -1,8 +1,8 @@
 package dev.enjarai.arcane_repository.event;
 
-import dev.enjarai.arcane_repository.block.entity.MysticalLecternBlockEntity;
-import dev.enjarai.arcane_repository.item.ModItems;
-import dev.enjarai.arcane_repository.item.custom.book.MysticalBookItem;
+import dev.enjarai.arcane_repository.registry.block.entity.MysticalLecternBlockEntity;
+import dev.enjarai.arcane_repository.registry.ModItems;
+import dev.enjarai.arcane_repository.registry.item.MysticalBookItem;
 import dev.enjarai.arcane_repository.util.request.IndexInteractable;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerBlockEntityEvents;
 import net.fabricmc.fabric.api.message.v1.ServerMessageEvents;

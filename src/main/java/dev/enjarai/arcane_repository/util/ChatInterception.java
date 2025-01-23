@@ -1,9 +1,9 @@
 package dev.enjarai.arcane_repository.util;
 
 import dev.enjarai.arcane_repository.ArcaneRepository;
-import dev.enjarai.arcane_repository.block.entity.MysticalLecternBlockEntity;
-import dev.enjarai.arcane_repository.item.custom.book.MysticalBookItem;
-import dev.enjarai.arcane_repository.item.ModItems;
+import dev.enjarai.arcane_repository.registry.block.entity.MysticalLecternBlockEntity;
+import dev.enjarai.arcane_repository.registry.item.MysticalBookItem;
+import dev.enjarai.arcane_repository.registry.ModItems;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Hand;

@@ -3,7 +3,7 @@ package dev.enjarai.arcane_repository.client.render;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import dev.enjarai.arcane_repository.ArcaneRepository;
-import dev.enjarai.arcane_repository.block.entity.MysticalLecternBlockEntity;
+import dev.enjarai.arcane_repository.registry.block.entity.MysticalLecternBlockEntity;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.LecternBlock;
 import net.minecraft.client.MinecraftClient;

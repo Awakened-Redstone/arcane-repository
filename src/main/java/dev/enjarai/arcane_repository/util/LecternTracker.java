@@ -1,9 +1,9 @@
 package dev.enjarai.arcane_repository.util;
 
-import dev.enjarai.arcane_repository.block.entity.MysticalLecternBlockEntity;
-import dev.enjarai.arcane_repository.item.custom.book.MysticalBookItem;
-import dev.enjarai.arcane_repository.item.custom.page.type.IndexSlaveTypePage;
-import dev.enjarai.arcane_repository.item.custom.page.type.IndexingTypePage;
+import dev.enjarai.arcane_repository.registry.block.entity.MysticalLecternBlockEntity;
+import dev.enjarai.arcane_repository.registry.item.MysticalBookItem;
+import dev.enjarai.arcane_repository.registry.item.page.type.IndexSlaveTypePage;
+import dev.enjarai.arcane_repository.registry.item.page.type.IndexingTypePage;
 import dev.enjarai.arcane_repository.util.request.IndexInteractable;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;

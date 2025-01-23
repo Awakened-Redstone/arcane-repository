@@ -1,7 +1,7 @@
 package dev.enjarai.arcane_repository.network;
 
 import dev.enjarai.arcane_repository.ArcaneRepository;
-import dev.enjarai.arcane_repository.item.custom.book.MysticalBookItem;
+import dev.enjarai.arcane_repository.registry.item.MysticalBookItem;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.network.RegistryByteBuf;
 import net.minecraft.network.codec.PacketCodec;

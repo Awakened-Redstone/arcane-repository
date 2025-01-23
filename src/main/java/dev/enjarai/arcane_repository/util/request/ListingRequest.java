@@ -1,9 +1,9 @@
 package dev.enjarai.arcane_repository.util.request;
 
-import dev.enjarai.arcane_repository.item.custom.book.MysticalBookItem;
-import dev.enjarai.arcane_repository.item.custom.page.type.ItemStorageTypePage;
+import dev.enjarai.arcane_repository.registry.item.MysticalBookItem;
+import dev.enjarai.arcane_repository.registry.item.page.type.storage.ItemStorageTypePage;
 import dev.enjarai.arcane_repository.util.BigStack;
-import dev.enjarai.arcane_repository.util.ContentsIndex;
+import dev.enjarai.arcane_repository.repository.storage.ContentsIndex;
 import net.minecraft.text.ClickEvent;
 import net.minecraft.text.Text;
 
@@ -46,7 +46,7 @@ public class ListingRequest extends QueryBasedRequest {
         var result = new ContentsIndex();
 
         do {
-            for (IndexSource source : index.getSources()) {
+            for (IndexSource source : index.arcane_repository$getSources()) {
                 if (isSatisfied()) break;
 
                 var book = source.getBook();

@@ -1,16 +1,13 @@
 package dev.enjarai.arcane_repository.util;
 
-import dev.enjarai.arcane_repository.ArcaneRepository;
 import dev.enjarai.arcane_repository.network.BlockParticlesPacket;
 import dev.enjarai.arcane_repository.util.request.IndexInteractable;
-import dev.enjarai.arcane_repository.util.request.Request;
-import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
+import dev.enjarai.arcane_repository.repository.request.Request;
 import net.fabricmc.fabric.api.networking.v1.PlayerLookup;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.particle.ParticleEffect;
 import net.minecraft.particle.ParticleTypes;
-import net.minecraft.registry.Registries;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;

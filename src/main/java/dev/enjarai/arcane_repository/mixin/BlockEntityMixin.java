@@ -1,7 +1,7 @@
 package dev.enjarai.arcane_repository.mixin;
 
-import dev.enjarai.arcane_repository.block.ModBlockEntities;
-import dev.enjarai.arcane_repository.block.entity.MysticalLecternBlockEntity;
+import dev.enjarai.arcane_repository.registry.ModBlockEntities;
+import dev.enjarai.arcane_repository.registry.block.entity.MysticalLecternBlockEntity;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
@@ -28,7 +28,7 @@ public class BlockEntityMixin {
     )
     private void modifyLecternType(BlockEntityType<?> type, BlockPos pos, BlockState state, CallbackInfo ci) {
         if (((Object) this) instanceof MysticalLecternBlockEntity) {
-            this.type = ModBlockEntities.MYSTICAL_LECTERN_BLOCK_ENTITY;
+            this.type = ModBlockEntities.MYSTICAL_LECTERN;
         }
     }
 }

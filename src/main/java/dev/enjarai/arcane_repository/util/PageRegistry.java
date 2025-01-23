@@ -1,6 +1,6 @@
 package dev.enjarai.arcane_repository.util;
 
-import dev.enjarai.arcane_repository.item.custom.page.PageItem;
+import dev.enjarai.arcane_repository.registry.item.page.PageItem;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 

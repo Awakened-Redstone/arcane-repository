@@ -1,9 +1,9 @@
 package dev.enjarai.arcane_repository.mixin;
 
-import dev.enjarai.arcane_repository.duck.RepositoryDrop;
-import dev.enjarai.arcane_repository.item.custom.book.MysticalBookItem;
-import dev.enjarai.arcane_repository.item.custom.page.attribute.PickupAttributePage;
-import dev.enjarai.arcane_repository.item.custom.page.type.ItemInsertableTypePage;
+import dev.enjarai.arcane_repository.extension.RepositoryDrop;
+import dev.enjarai.arcane_repository.registry.item.MysticalBookItem;
+import dev.enjarai.arcane_repository.registry.item.page.attribute.PickupAttributePage;
+import dev.enjarai.arcane_repository.registry.item.page.type.ItemInsertableTypePage;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -69,7 +69,7 @@ public class ItemEntityMixin implements RepositoryDrop {
             var bookitem = (MysticalBookItem) bookStack.getItem();
             if (bookitem.getTypePage(bookStack).orElse(null) instanceof ItemInsertableTypePage storageTypePage) {
                 var foundPage = bookitem.getAttributePage(bookStack, "pickup");
-                if (foundPage != null && bookitem.getAttributePage(bookStack, "pickup").orElse(null) instanceof PickupAttributePage) {
+                if (foundPage.isPresent() && bookitem.getAttributePage(bookStack, "pickup").orElse(null) instanceof PickupAttributePage) {
                     storageTypePage.book$tryInsertItemStack(bookStack, player, itemPickedUp);
                     return itemPickedUp.getCount() <= 0;
                 }
